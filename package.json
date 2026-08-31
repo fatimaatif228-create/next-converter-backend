@@ -1,0 +1,79 @@
+{
+  "name": "repress-api",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "format": "prettier --write \"**/*.js\"",
+    "start": "babel-node index.js",
+    "start:dev": "nodemon",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "lint": "eslint .",
+    "prepare": "husky",
+    "db:seed": "node scripts/seed.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@nestjs/bullmq": "^11.0.4",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/platform-socket.io": "^11.1.28",
+    "@nestjs/schedule": "^6.1.3",
+    "@nestjs/swagger": "^11.4.4",
+    "@supabase/supabase-js": "^2.108.2",
+    "adm-zip": "^0.6.0",
+    "bullmq": "^5.81.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "helmet": "^8.2.0",
+    "ioredis": "^6.0.0",
+    "joi": "^18.2.1",
+    "multer": "^2.2.0",
+    "php-parser": "^3.7.0",
+    "reflect-metadata": "^0.2.0",
+    "resend": "^6.17.2",
+    "rxjs": "^7.2.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "swagger-ui-express": "^5.0.1",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/eslint-parser": "^7.29.7",
+    "@babel/node": "7.29.0",
+    "@babel/plugin-proposal-decorators": "^7.29.7",
+    "@babel/plugin-transform-runtime": "7.29.0",
+    "@babel/preset-env": "7.29.2",
+    "@babel/register": "7.28.6",
+    "@babel/runtime": "7.29.2",
+    "@nestjs/testing": "^11.0.1",
+    "eslint": "^8.57.1",
+    "husky": "^9.1.7",
+    "jest": "30.3.0",
+    "lint-staged": "^16.4.0",
+    "nodemon": "3.1.14",
+    "prettier": "^3.8.3",
+    "supertest": "7.2.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.js$",
+    "coverageDirectory": "../coverage"
+  }
+}
